@@ -4,28 +4,28 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [{
-    path: '/',
-    name: 'index',
-    component: () =>
+    mode: 'hash',
+    base: process.env.BASE_URL,
+    routes: [{
+        path: '/',
+        name: 'index',
+        component: () =>
       import('@/views/Index.vue')
-  },
-  {
-    path: '/file',
-    name: 'file',
-    component: () =>
+    },
+    {
+        path: '/file',
+        name: 'file',
+        component: () =>
       import('@/views/tools/Files.vue')
-  },
-  {
-    path: '/excel',
-    component: () =>
+    },
+    {
+        path: '/excel',
+        component: () =>
       import('@/views/tools/ParseExcel.vue')
-  }, {
-    path: '/toExcel',
-    component: () =>
+    }, {
+        path: '/toExcel',
+        component: () =>
       import('@/views/tools/JsonToExcel.vue')
-  }
-  ]
+    }
+    ]
 })
