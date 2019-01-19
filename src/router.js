@@ -26,6 +26,10 @@ export default new Router({
         path: '/toExcel',
         component: () =>
       import('@/views/tools/JsonToExcel.vue')
+    }, {
+        path: '/res',
+        component: () =>
+          import('@/views/resume/Index.vue')
     }
     ]
 })

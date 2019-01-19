@@ -1,8 +1,5 @@
-<style>
-</style>
-
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid p-2">
     <div class="row">
       <div class="col-md-12">
         <form class="form-inline">
@@ -26,60 +23,60 @@
 import X from 'xlsx'
 import FileSaver from 'file-saver'
 export default {
-  data () {
-    return {
-      myText: ''
+    data () {
+        return {
+            myText: ''
+        }
+    },
+    created () {},
+    methods: {
+        formatData () {
+            let data = JSON.parse(this.myText)
+            this.myText = JSON.stringify(data, null, 2)
+        },
+        exportData () {
+            try {
+                let valData = JSON.parse(this.myText)
+                this.export_json_to_excel('xlsx', 'data', valData)
+            } catch (e) {
+                console.log(e)
+            } finally {
+            }
+        },
+        s2ab (s) {
+            if (typeof ArrayBuffer !== 'undefined') {
+                let buf = new ArrayBuffer(s.length)
+                let view = new Uint8Array(buf)
+                for (let i = 0; i !== s.length; ++i) view[i] = s.charCodeAt(i) & 0xff
+                return buf
+            } else {
+                let buf = new Array(s.length)
+                for (let i = 0; i !== s.length; ++i) buf[i] = s.charCodeAt(i) & 0xff
+                return buf
+            }
+        },
+        export_json_to_excel (type, fn, json) {
+            let sheet = X.utils.json_to_sheet(json)
+            let wb = X.utils.book_new()
+            X.utils.book_append_sheet(wb, sheet, 'sheet')
+            let wbout = X.write(wb, {
+                bookType: type,
+                bookSST: true,
+                type: 'binary'
+            })
+            let fname = (fn || 'test') + '.' + type
+            try {
+                FileSaver.saveAs(
+                    new Blob([this.s2ab(wbout)], {
+                        type: 'application/octet-stream'
+                    }),
+                    fname
+                )
+            } catch (e) {
+                if (typeof console !== 'undefined') console.log(e, wbout)
+            }
+            return wbout
+        }
     }
-  },
-  created () {},
-  methods: {
-    formatData () {
-      let data = JSON.parse(this.myText)
-      this.myText = JSON.stringify(data, null, 2)
-    },
-    exportData () {
-      try {
-        let valData = JSON.parse(this.myText)
-        this.export_json_to_excel('xlsx', 'data', valData)
-      } catch (e) {
-        console.log(e)
-      } finally {
-      }
-    },
-    s2ab (s) {
-      if (typeof ArrayBuffer !== 'undefined') {
-        let buf = new ArrayBuffer(s.length)
-        let view = new Uint8Array(buf)
-        for (let i = 0; i !== s.length; ++i) view[i] = s.charCodeAt(i) & 0xff
-        return buf
-      } else {
-        let buf = new Array(s.length)
-        for (let i = 0; i !== s.length; ++i) buf[i] = s.charCodeAt(i) & 0xff
-        return buf
-      }
-    },
-    export_json_to_excel (type, fn, json) {
-      let sheet = X.utils.json_to_sheet(json)
-      let wb = X.utils.book_new()
-      X.utils.book_append_sheet(wb, sheet, 'sheet')
-      let wbout = X.write(wb, {
-        bookType: type,
-        bookSST: true,
-        type: 'binary'
-      })
-      let fname = (fn || 'test') + '.' + type
-      try {
-        FileSaver.saveAs(
-          new Blob([this.s2ab(wbout)], {
-            type: 'application/octet-stream'
-          }),
-          fname
-        )
-      } catch (e) {
-        if (typeof console !== 'undefined') console.log(e, wbout)
-      }
-      return wbout
-    }
-  }
 }
 </script>

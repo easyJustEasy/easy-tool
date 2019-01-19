@@ -1,14 +1,7 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <router-link :to="{ path:'/' }">
-            <img class="logo" alt="Brand" src="./assets/logo.png">
-          </router-link>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-      </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <span class="navbar-text">welcome to my website.contanct me.<a href="mailto:zhusiyuanhao@163.com"> zhusiyuanhao@163.com</a></span>
     </nav>
     <router-view/>
   </div>
@@ -16,7 +9,7 @@
 
 <script>
 export default {
-  name: 'App'
+    name: 'App'
 }
 </script>
 
@@ -24,5 +17,8 @@ export default {
 .logo {
   width: 50px;
   height: 50px;
+}
+body{
+  background: #f5f4f5!important;
 }
 </style>

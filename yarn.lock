@@ -7714,6 +7714,11 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
+scrollmonitor@^1.2.4:
+  version "1.2.4"
+  resolved "http://registry.npm.taobao.org/scrollmonitor/download/scrollmonitor-1.2.4.tgz#823d04cc1574aa3b71de7cc70ef91ebe633344a0"
+  integrity sha1-gj0EzBV0qjtx3nzHDvkevmMzRKA=
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/select-hose/download/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
@@ -8773,6 +8778,13 @@ uuid@^3.0.1, uuid@^3.1.0, uuid@^3.3.2:
   version "3.3.2"
   resolved "http://registry.npm.taobao.org/uuid/download/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha1-G0r0lV6zB3xQHCOHL8ZROBFYcTE=
+
+v-animate-css@^0.0.3:
+  version "0.0.3"
+  resolved "http://registry.npm.taobao.org/v-animate-css/download/v-animate-css-0.0.3.tgz#fa3f41e5995404f0e5a741cdb2c576ce01f9df16"
+  integrity sha1-+j9B5ZlUBPDlp0HNssV2zgH53xY=
+  dependencies:
+    scrollmonitor "^1.2.4"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
