@@ -3,6 +3,7 @@ export default {
         baseInfo: () => import('./BaseInfo.vue'),
         projectInfo: () => import('./ProjectInfo.vue'),
         selfSay: () => import('./SelfSay.vue'),
-        workInfo: () => import('./WorkInfo.vue')
+        workInfo: () => import('./WorkInfo.vue'),
+        skills: () => import('./Skills.vue')
     }
 }

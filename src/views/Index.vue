@@ -1,9 +1,3 @@
-<style lang="less">
-.my-index {
-  padding: 64px;
-}
-</style>
-
 <template>
   <div class="my-index">
     <div class="container">
@@ -54,8 +48,6 @@ export default {
                 }
             ]
         }
-    },
-    created () {},
-    methods: {}
+    }
 }
 </script>
