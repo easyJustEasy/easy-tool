@@ -1,6 +1,6 @@
 export default [
     {
-        title: '智联校园ncpms',
+        title: '校园项目管理系统',
         startDate: '2018.07',
         endDate: '至今',
         desc: `前后端分离
@@ -8,13 +8,13 @@ export default [
       后端使用springboot，mybatis，rabbitmq等
       部署在docker环境
       框架搭建，页面编写，后端接口编写
-      项目链接: http://ncpm.zhaopin.com`
+      项目链接: 保密`
     },
     {
-        title: '智联校园cpms',
+        title: '校园项目管理系统',
         startDate: '2015.09',
         endDate: '至今',
-        desc: `cpms辅助智联校园业务流转的系统，根据校园部门的不同业务场景，开发出来的相关功能。项目后台使用了springmvc，定时器，javamail等，前端使用了gulp，webpack，knockout，bootstrap等流行框架。某些模块设计与开发`
+        desc: `辅助校园业务流转的系统，根据校园部门的不同业务场景，开发出来的相关功能。项目后台使用了springmvc，定时器，javamail等，前端使用了gulp，webpack，knockout，bootstrap等流行框架。某些模块设计与开发`
     },
 
     {
