@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Index from '@/views/index.vue'
+import Index from '@/views/Index.vue'
 import Files from '@/views/tools/Files.vue'
 import JsonToExcel from '@/views/tools/JsonToExcel.vue'
 import ParseExcel from '@/views/tools/ParseExcel.vue'
