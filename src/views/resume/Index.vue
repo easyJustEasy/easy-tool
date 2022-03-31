@@ -27,7 +27,8 @@ export default {
 </style>
 <style lang="less">
 body {
-  background-image: url("~@/assets/bg.jpeg") !important;
+  // background-image: url("~@/assets/bg.jpeg") !important
+  background-color: #333;
   background-repeat: no-repeat !important;
   background-size: 100% 100% !important;
 }
