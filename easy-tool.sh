@@ -19,5 +19,5 @@ if [ ! -d  $ngpath  ];then
 else
     rm -rf $ngpath
 fi
-cp -r  $codefolder/docs $ngpath
+#cp -r  $codefolder/docs $ngpath
 echo "build success... "
