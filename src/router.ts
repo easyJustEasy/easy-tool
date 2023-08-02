@@ -4,6 +4,8 @@ import Files from '@/views/tools/Files.vue'
 import JsonToExcel from '@/views/tools/JsonToExcel.vue'
 import ParseExcel from '@/views/tools/ParseExcel.vue'
 import ResumeIndex from '@/views/resume/Index.vue'
+import TimeCal from '@/views/tools/TimeCal.vue'
+
 const routes = [{
   path: '/',
   name: 'index',
@@ -23,6 +25,9 @@ const routes = [{
 }, {
   path: '/res',
   component: ResumeIndex
+}, {
+  path: '/timeCal',
+  component: TimeCal
 }
 ]
 const router = createRouter({

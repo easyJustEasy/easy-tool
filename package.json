@@ -2,12 +2,13 @@
   "name": "vue-project",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "dev": "vite --mode dev",
+    "build": "vue-tsc --noEmit && vite build ",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "dayjs": "^1.11.9",
     "element-plus": "^2.1.7",
     "file-saver": "^2.0.5",
     "less": "^4.1.2",

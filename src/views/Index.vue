@@ -1,18 +1,9 @@
 <template>
   <div class="my-index">
     <el-row>
-      <router-link
-        :to="{ path: itm.url }"
-        v-for="(itm, index) in data"
-        :key="index"
-      >
-        <el-tooltip
-          class="box-item"
-          effect="dark"
-          :content="itm.name"
-          placement="bottom-start"
-        >
-          <el-button size="large" :type="itm.type || 'primary'" :icon="itm.icon" circle  class="function-item"/>
+      <router-link :to="{ path: itm.url }" v-for="(itm, index) in data" :key="index">
+        <el-tooltip class="box-item" effect="dark" :content="itm.name" placement="bottom-start">
+          <el-button size="large" :type="itm.type || 'primary'" :icon="itm.icon" circle class="function-item" />
         </el-tooltip>
       </router-link>
     </el-row>
@@ -27,6 +18,7 @@ import {
   Message,
   Search,
   Star,
+  AlarmClock
 } from "@element-plus/icons-vue";
 export default {
   data() {
@@ -48,6 +40,12 @@ export default {
           url: "/toExcel",
           icon: Message,
         },
+        {
+          type: "primary",
+          name: "日期计算器",
+          url: "/timeCal",
+          icon: AlarmClock,
+        },
       ],
     };
   },
@@ -55,13 +53,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.my-index{
-  background-color:#333!important;
-  padding:32px;
-  width:100%;
+.my-index {
+  background-color: #333 !important;
+  padding: 32px;
+  width: 100%;
   min-height: 1024px;
 }
-.function-item{
+
+.function-item {
   margin-right: 16px;
 }
 </style>
